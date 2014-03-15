@@ -47,35 +47,10 @@ end)
 
 function GM:AdminBackup()
 	for _, ply in pairs(player.GetAll()) do
-		local strSteamID = string.Replace(ply:SteamID(), ":", "!")
-		if strSteamID != "STEAM_ID_PENDING" then
-			local strFileName = "UnderDone/" .. strSteamID .. ".txt"
-			local tblSaveTable = table.Copy(ply.Data)
-			tblSaveTable.Inventory = {}
-			--Polkm: Space saver loop
-			for strItem, intAmount in pairs(ply.Data.Inventory or {}) do
-				if intAmount > 0 then tblSaveTable.Inventory[strItem] = intAmount end
-			end
-			tblSaveTable.Bank = {}
-			for strItem, intAmount in pairs(ply.Data.Bank or {}) do
-				if intAmount > 0 then tblSaveTable.Bank[strItem] = intAmount end
-			end
-			tblSaveTable.Quests = {}
-			for strQuest, tblInfo in pairs(ply.Data.Quests or {}) do
-				if tblInfo.Done then
-					tblSaveTable.Quests[strQuest] = {Done = true}
-				else
-					tblSaveTable.Quests[strQuest] = tblInfo
-				end
-			end
-			tblSaveTable.Exp = ply:GetNWInt("exp")
-			file.Write(strFileName, glon.encode(tblSaveTable))
-			ply:ChatPrint("Admin has saved a backup of player data")
-		end
+		ply:SaveGame()
 	end
 end
 concommand.Add("UD_Admin_SaveBackup", function(ply, command, args) 
-	local tblRow = db.GetBySteamID(ply:SteamID())
 	if ply:IsAdmin() then
 		GAMEMODE:AdminBackup()
 	end
@@ -88,7 +63,6 @@ function GM:AdminSetUsergroup(args)
 	player:SaveGame()
 end
 concommand.Add("UD_Admin_SetUserGroup", function(ply, command, args)
-	local tblRow = db.GetBySteamID(ply:SteamID())
 	if ply:IsSuperAdmin() then
 		if !args && !args[1] then return end
 		if !args[2] then return end

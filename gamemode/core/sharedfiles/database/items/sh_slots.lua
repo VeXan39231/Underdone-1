@@ -27,7 +27,7 @@ SLOT.Name = "slot_back"
 SLOT.PrintName = "Back Piece"
 SLOT.Desc = "Goes on your back"
 SLOT.Position = Vector(50, 40, 0)
-SLOT.Attachment = "chest"
+SLOT.Attachment = "ValveBiped.Bip01_Spine4"
 Register.Slot(SLOT)
 
 local SLOT = {}

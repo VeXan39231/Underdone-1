@@ -63,7 +63,7 @@ concommand.Add("UD_PlaySound", function(ply, command, args)
 	ply:PlaySound(args)
 end)
 
---[[
+
 local intMaxHieght = 75
 local intMinHieght = 5
 local intDirection = 0.08
@@ -84,6 +84,9 @@ hook.Add("PrePlayerDraw", "DrawTest", function(ply)
 		end
 	end
 	intLastHieght = intLastHieght + intDirection
-	if intLastHieght >= intMaxHieght or intLastHieght <= intMinHieght then intDirection = -intDirection end
+	if intLastHieght >= intMaxHieght or intLastHieght <= intMinHieght then 
+		intDirection = -intDirection
+		hook.Remove("PrePlayerDraw", "DrawTest")
+	end
 	render.EndBeam()
-end)]]
+end)

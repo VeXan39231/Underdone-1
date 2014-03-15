@@ -7,6 +7,7 @@ function Player:NewGame()
 	self:AddItem("item_healthkit", 2)
 	self:AddItem("weapon_melee_axe", 1)
 	self:AddItem("weapon_ranged_junkpistol", 1)
+	self:AddItem("armor_back_sack", 1)
 	--[[
 	self:AddItem("item_canspoilingmeat", 1)
 	self:AddItem("weapon_melee_fryingpan", 1)
@@ -116,6 +117,9 @@ function Player:SaveGame()
 		local strFileName = "UnderDone/" .. strSteamID .. ".txt"
 		tblSaveTable.Exp = self:GetNWInt("exp")
 		file.Write(strFileName, glon.encode(tblSaveTable))
+		self:ChatPrint("Player data saved.")
+	else
+		self:ChatPrint("Player save failed.")
 	end
 end
 
