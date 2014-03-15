@@ -27,7 +27,7 @@ Register.Stat(Stat)
 local Stat = {}
 Stat.Name = "stat_strength"
 Stat.PrintName = "Strength"
-Stat.Desc = "The more you have more damage melee attack will do"
+Stat.Desc = "This is how hard you hit."
 Stat.Default = 1
 function Stat:OnSet(ply, intStrength, intOldStrength)
 	--ply:AddStat("stat_maxhealth", (intStrength - intOldStrength) * 1.5)
@@ -43,7 +43,7 @@ Register.Stat(Stat)
 local Stat = {}
 Stat.Name = "stat_dexterity"
 Stat.PrintName = "Dexterity"
-Stat.Desc = "The more you have more damage ranged attack will do"
+Stat.Desc = "The more you have more damage ranged attack will do."
 Stat.Default = 1
 function Stat:DamageMod(ply, intDexterity, intDamage)
 	if !ply:IsMelee() then
@@ -56,14 +56,14 @@ Register.Stat(Stat)
 local Stat = {}
 Stat.Name = "stat_intellect"
 Stat.PrintName = "Intellect"
-Stat.Desc = ""
+Stat.Desc = "How smart you are."
 Stat.Default = 1
 Register.Stat(Stat)
 
 local Stat = {}
 Stat.Name = "stat_agility"
 Stat.PrintName = "Agility"
-Stat.Desc = "The higher this is teh faster you run and reload and attack"
+Stat.Desc = "The higher this is the faster you run and reload and attack."
 Stat.Default = 1
 function Stat:OnSet(ply, intAgility, intOldAgility)
 	ply:AddMoveSpeed((intAgility - intOldAgility) * 10)
@@ -77,6 +77,6 @@ Register.Stat(Stat)
 local Stat = {}
 Stat.Name = "stat_luck"
 Stat.PrintName = "Luck"
-Stat.Desc = "You find your self to be more lucky, crit hits"
+Stat.Desc = "You find yourself to be more lucky, crit hits."
 Stat.Default = 1
 Register.Stat(Stat)
