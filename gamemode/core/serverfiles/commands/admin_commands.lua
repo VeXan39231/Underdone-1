@@ -69,3 +69,16 @@ concommand.Add("UD_Admin_SetUserGroup", function(ply, command, args)
 		GAMEMODE:AdminSetUsergroup(args)
 	end
 end)
+
+function GM:AdminGive(ply, args)
+	local item = args[1]
+	local amount = args[2]
+	ply:AddItem(item, amount)
+end
+concommand.Add("UD_Admin_Give", function(ply, command, args)
+	if ply:IsSuperAdmin() then
+		if !args && !args[1] then return end
+		if !args[2] then args[2] = 1 end
+		GAMEMODE:AdminGive(ply, args)
+	end
+end)
