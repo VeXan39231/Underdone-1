@@ -1,22 +1,22 @@
 -------------------------
 ----------Colors---------
-clrGray = Color(97, 95, 90, 255)
-clrDrakGray = Color(43, 42, 39, 255)
+clrGray = Color(128, 128, 128, 255)
+clrDrakGray = Color(64, 64, 64, 255)
 clrGreen = Color(194, 255, 72, 255)
 clrOrange = Color(255, 137, 44, 255)
 clrPurple = Color(135, 81, 201, 255)
 clrBlue = Color(59, 142, 209, 255)
 clrRed = Color(191, 75, 37, 255)
 clrTan = Color(178, 161, 126, 255)
-clrCream = Color(245, 255, 154, 255)
-clrMooca = Color(107, 97, 78, 255)
-clrWhite = Color(242, 242, 242, 255)
+clrCream = Color(254, 255, 238, 255)
+clrMoca = Color(132, 115, 80, 255) --I don't think it's spelled Mooca
+clrWhite = Color(255, 255, 255, 255)
 ---------Generic---------
 GM.Name 		= "UnderDone"
-GM.Author 		= "Shell Shocked Gaming & TowerYard Entertainment"
-GM.Email 		= "polkmpolkmpolkm@gmail.com"
-GM.Website 		= "http://shellshocked.net46.net/"
-GM.MaxSlots		= 20
+GM.Author 		= "TacoInc" --Shell Shocked Gaming & TowerYard Entertainment
+GM.Email 		= "" --polkmpolkmpolkm@gmail.com
+GM.Website 		= ""
+GM.MaxSlots		= 64
 -----Global Vars---------
 GM.MonsterViewDistance = 200
 GM.RelationHate = 1
@@ -93,7 +93,7 @@ AddQuestObject("Oil Drum","models/props_c17/oildrum001.mdl", 60)
 
 GM.PlayerModel = {}
 ---------Models----------
-//Citizen
+--Citizen
 AddPlayerModel( "models/player/group01/male_01.mdl" )
 AddPlayerModel( "models/player/group01/male_02.mdl" )
 AddPlayerModel( "models/player/group01/male_03.mdl" )
@@ -110,7 +110,7 @@ AddPlayerModel( "models/player/group01/female_04.mdl" )
 AddPlayerModel( "models/player/group01/female_06.mdl" )
 AddPlayerModel( "models/player/group01/female_07.mdl" )
 
-//Rebel
+--Rebel
 AddPlayerModel( "models/player/group03/male_01.mdl" )
 AddPlayerModel( "models/player/group03/male_02.mdl" )
 AddPlayerModel( "models/player/group03/male_03.mdl" )
@@ -126,3 +126,5 @@ AddPlayerModel( "models/player/group03/female_03.mdl" )
 AddPlayerModel( "models/player/group03/female_04.mdl" )
 AddPlayerModel( "models/player/group03/female_06.mdl" )
 AddPlayerModel( "models/player/group03/female_07.mdl" )
+
+--Prepare for some extra models
